@@ -24,10 +24,8 @@ pipeline {
         }
         stage('Docker Deploy') {
             steps {
-                sshagent(['docker-host']) {
-                    sh "ssh -o StrictHostKeyChecking=no  ec2-user@3.91.24.109 docker rm -f hiring"
-                    sh "ssh  ec2-user@3.91.24.109 docker run -d -p 8080:8080 --name hiring vineshkemidi/hiring-app:${commit_id()}"
-                }
+                sh "docker rm -f hiring || true"  // Remove the existing container, ignore error if it doesn't exist
+                sh "docker run -d -p 8080:8080 --name hiring vineshkemidi/hiring-app:${commit_id()}"
             }
         }
 
