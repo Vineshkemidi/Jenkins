@@ -36,7 +36,7 @@ pipeline{
             nexusUrl: '3.84.88.210:8081', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
-            repository: 'spring-initial', 
+            repository: 'Hiring_app', 
             version: '0.0.1'
             }
         }
