@@ -44,9 +44,9 @@ pipeline{
             steps{
                sshagent(['tomcat-credentials']) {
                   sh """
-                    scp -o StrictHostKeyChecking=no target/*.war ubuntu@54.173.252.57:/opt/apache-tomcat-9.0.72/webapps
-                    ssh -o StrictHostKeyChecking=no ubuntu@54.173.252.57 /opt/apache-tomcat-9.0.72/bin/shutdown.sh
-                    ssh -o StrictHostKeyChecking=no ubuntu@54.173.252.57 /opt/apache-tomcat-9.0.72/bin/startup.sh
+                    scp -o StrictHostKeyChecking=no target/*.war ubuntu@34.229.251.93:/opt/apache-tomcat-9.0.93/webapps
+                    ssh -o StrictHostKeyChecking=no ubuntu@34.229.251.93 /opt/apache-tomcat-9.0.93/bin/shutdown.sh
+                    ssh -o StrictHostKeyChecking=no ubuntu@34.229.251.93 /opt/apache-tomcat-9.0.93/bin/startup.sh
 					
 		          """          
                }
