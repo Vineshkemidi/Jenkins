@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Docker Deploy') {
             steps {
-                sh "docker rm -f hiring || true"  // Remove the existing container, ignore error if it doesn't exist
+                sh "docker rm -f hiring-app || true"  // Remove the existing container, ignore error if it doesn't exist
                 sh "docker run -d -p 8080:8080 --name hiring vineshkemidi/hiring-app:${commit_id()}"
             }
         }
